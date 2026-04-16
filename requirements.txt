@@ -1,0 +1,11 @@
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.4.2
+sentence-transformers==5.1.1
+networkx==3.2.1
+pyyaml==6.0.1
+openpyxl==3.1.2
+tqdm==4.66.4
+hdbscan==0.8.40
+scipy==1.16.2
+matplotlib>=3.4.0

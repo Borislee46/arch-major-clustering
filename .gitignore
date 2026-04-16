@@ -1,0 +1,7 @@
+src/clustering/embedding/*
+__pycache__
+.cache
+*.log
+~$*.xlsx
+~$*.xls
+*.tmp
