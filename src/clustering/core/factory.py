@@ -81,12 +81,12 @@ class ClustererFactory:
         config = config or ClusteringConfig()
         
         try:
-            clusterer = cls._clusterers[algorithm](
-                config=config,
-                model=model,
-                model_name=model_name,
-                **kwargs
-            )
+            init_kwargs = {'config': config, **kwargs}
+            if model is not None:
+                init_kwargs['model'] = model
+            if model_name is not None:
+                init_kwargs['model_name'] = model_name
+            clusterer = cls._clusterers[algorithm](**init_kwargs)
             logger.info(f"创建{algorithm}聚类器实例")
             return clusterer
             

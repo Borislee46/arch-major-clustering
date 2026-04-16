@@ -119,7 +119,7 @@ class DBSCANClusterer(BaseClusterer):
         avg_intra_similarity = np.mean(intra_similarities) if intra_similarities else 0
         
         avg_size, std_size, _ = get_cluster_statistics(valid_clusters)
-        size_uniformity = 1 - (std_size / avg_size) if avg_size > 0 else 0
+        size_uniformity = max(0.0, 1 - (std_size / avg_size)) if avg_size > 0 else 0
 
         score = (
             0.4 * avg_intra_similarity +

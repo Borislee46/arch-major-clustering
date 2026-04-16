@@ -17,10 +17,10 @@ class TestClusteringConfig(unittest.TestCase):
         """测试默认配置"""
         config = ClusteringConfig()
         
-        self.assertEqual(config.connectivity_threshold, 0.65)
-        self.assertEqual(config.min_similarity_threshold, 0.45)
-        self.assertEqual(config.max_cluster_size, 80)
-        self.assertEqual(config.max_depth, 4)
+        self.assertEqual(config.connectivity_threshold, 0.58)
+        self.assertEqual(config.min_similarity_threshold, 0.52)
+        self.assertEqual(config.max_cluster_size, 45)
+        self.assertEqual(config.max_depth, 5)
         self.assertIsNotNone(config.eps_range)
         self.assertIsNotNone(config.min_samples_range)
     

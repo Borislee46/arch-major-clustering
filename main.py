@@ -69,7 +69,8 @@ def main():
         
         try:
             middle_mapping = clusterer.build_middle_clusters(clusters)
-        except (AttributeError, ValueError, TypeError):
+        except Exception as e:
+            logger.warning(f"中层聚类失败: {e}")
             middle_mapping = None
         
         save_results(clusters, args.output_file, middle_mapping)

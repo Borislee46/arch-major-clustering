@@ -77,11 +77,6 @@ class ClusteringConfig:
         return cls.from_dict(config_dict)
     
     def to_dict(self) -> Dict[str, Any]:
-        """将配置对象转换为字典
-        
-        Returns:
-            Dict: 配置字典
-        """
         config_dict = {
             'connectivity_threshold': self.connectivity_threshold,
             'min_similarity_threshold': self.min_similarity_threshold,
@@ -107,14 +102,8 @@ class ClusteringConfig:
         return config_dict
     
     def to_yaml(self, yaml_path: str) -> None:
-        """将配置保存为YAML文件
-        
-        Args:
-            yaml_path: 保存路径
-        """
         config_dict = self.to_dict()
         yaml_path = Path(yaml_path)
         yaml_path.parent.mkdir(parents=True, exist_ok=True)
-        
         with open(yaml_path, 'w', encoding='utf-8') as f:
-            yaml.safe_dump(config_dict, f, allow_unicode=True) 
+            yaml.safe_dump(config_dict, f, allow_unicode=True)
